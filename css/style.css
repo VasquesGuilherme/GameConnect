@@ -1,0 +1,1654 @@
+/* ============================================
+   ESTILOS GLOBAIS
+   ============================================ */
+
+body {
+  background-image: url(../fotos/fundo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow: auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Esconde o olho nativo do Edge/Chrome/IE em todos os campos de senha */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.linkAcao {
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.linkAcao::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transition: width 0.3s ease-in-out;
+}
+
+.linkAcao:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes alternatingLedGlow {
+  0% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000) drop-shadow(0 0 40px #ff0000);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px #00c50a) drop-shadow(0 0 10px #00c50a) drop-shadow(0 0 20px #00c50a) drop-shadow(0 0 40px #00c50a);
+  }
+}
+
+@keyframes pulseLed {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(0,0,0,0.8), 0 0 20px rgba(255,0,0,0.6);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0,0,0,0.8), 0 0 45px rgba(255,0,0,1), inset 0 0 15px rgba(255,0,0,0.4);
+  }
+}
+
+@keyframes pulseLedGreen {
+  0%, 100% {
+    box-shadow: 0 0 35px rgba(0,0,0,0.8), 0 0 20px rgba(0,197,10,0.6);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0,0,0,0.8), 0 0 45px rgba(0,197,10,1), inset 0 0 15px rgba(0,197,10,0.4);
+  }
+}
+
+@keyframes pulseLedGreenGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #00c50a) drop-shadow(0 0 10px #00c50a) drop-shadow(0 0 20px #00c50a) drop-shadow(0 0 40px #00c50a);
+  }
+  50% {
+    filter: drop-shadow(0 0 5px #66ff7e) drop-shadow(0 0 10px #66ff7e) drop-shadow(0 0 20px #66ff7e) drop-shadow(0 0 40px #66ff7e);
+  }
+}
+
+@keyframes pulseLedRedGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #ff0000) drop-shadow(0 0 10px #ff0000) drop-shadow(0 0 20px #ff0000) drop-shadow(0 0 40px #ff0000);
+  }
+  50% {
+    filter: drop-shadow(0 0 5px #ff6666) drop-shadow(0 0 10px #ff6666) drop-shadow(0 0 20px #ff6666) drop-shadow(0 0 40px #ff6666);
+  }
+}
+
+/* ============================================
+   TELA DE INÍCIO
+   ============================================ */
+
+.Inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.telaInicio {
+  margin-top: 60px;
+}
+
+.telaInicio h1 {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px rgba(167,0,0,0.5);
+}
+
+.G {
+
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  animation: alternatingLedGlow 2.5s ease-in-out infinite alternate;
+}
+
+.GCadastro {
+
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  animation: pulseLedRedGlow 2.5s ease-in-out infinite;
+}
+
+.btnInicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+}
+
+.btnInicio input {
+  width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+.btnIlogin {
+  background-color: transparent;
+  border: 2px solid #00c50a !important;
+  color: white !important;
+}
+
+.btnIlogin:hover {
+  background-color: #00c50a;
+  border-color: #00c50a;
+}
+
+.btnIlogin:active {
+  background-color: #008106;
+  transform: scale(0.95);
+}
+
+.btnIcadastro {
+  background-color: transparent;
+  border: 2px solid #a70000ff !important;
+}
+
+.btnIcadastro:hover {
+  background-color: #d10000;
+  border-color: #d10000;
+}
+
+.btnIcadastro:active {
+  background-color: #8b0000;
+  transform: scale(0.95);
+}
+
+/* ============================================
+   TELA DE CADASTRO
+   ============================================ */
+
+.Container {
+  display: flex;
+  height: 100vh;
+}
+
+.Logo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Logo h1 {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 10px;
+  text-shadow: 2px 2px 5px rgba(167,0,0,0.5);
+}
+
+.Cadastro {
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.txtCadastro {
+  background-color: #a70000ff;
+  padding: 20px;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+  border-left: 1px solid #ff0000;
+  border-right: 1px solid #ff0000;
+  border-top: 1px solid #ff0000;
+  border-bottom: none;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), 0 0 10px rgba(255,0,0,0.3);
+  animation: pulseLed 4s infinite;
+}
+
+.Cadastro form {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 0px 0px 15px 15px;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-left: 1px solid #ff0000;
+  border-right: 1px solid #ff0000;
+  border-bottom: 1px solid #ff0000;
+  border-top: none;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), 0 0 10px rgba(255,0,0,0.3);
+  animation: pulseLed 4s infinite;
+}
+
+.inputCadastro {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  padding-right: 45px;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+}
+
+.inputCadastro.dateInput {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.inputCadastro.dateInput::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.inputCadastro.dateInput::-moz-calendar-picker-indicator {
+  display: none;
+}
+
+.inputCadastroContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.dateIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #ffffff;
+  background: transparent;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+.dateIcon:hover {
+  color: #a70000;
+}
+
+.btnCadastro {
+  width: 250px;
+  padding: 12px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center;
+}
+
+.btnCadastro:hover {
+  background-color: #d10000;
+}
+
+.btnCadastro:active {
+  background-color: #8b0000;
+  transform: scale(0.98);
+}
+
+/* ============================================
+   TELA DE LOGIN
+   ============================================ */
+
+.ContainerL {
+  display: flex;
+  height: 100vh;
+}
+
+.LogoL {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.GL {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  animation: pulseLedGreenGlow 4s infinite;
+}
+
+.LogoL h1 {
+  color: #fff;
+  font-size: 40px;
+  margin-top: 10px;
+  max-width: 100%;
+  text-shadow: 2px 2px 5px rgba(0,197,10,0.5);
+}
+
+.Login {
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px;
+}
+
+.txtLogin {
+  background-color: #00c50a;
+  padding: 20px;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+  border-left: 1px solid #00c50a;
+  border-right: 1px solid #00c50a;
+  border-top: 1px solid #00c50a;
+  border-bottom: none;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), 0 0 10px rgba(0,197,10,0.3);
+  animation: pulseLedGreen 4s infinite;
+}
+
+.Login form {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 0px 0px 15px 15px;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  border-left: 1px solid #00c50a;
+  border-right: 1px solid #00c50a;
+  border-bottom: 1px solid #00c50a;
+  border-top: none;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), 0 0 10px rgba(0,197,10,0.3);
+  animation: pulseLedGreen 4s infinite;
+}
+
+/* Responsividade: empilha colunas e ajusta paddings em telas menores */
+@media (max-width: 900px) {
+  .Container,
+  .ContainerL {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .Cadastro,
+  .Login {
+    padding: 20px;
+  }
+
+  .Cadastro form,
+  .Login form {
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .txtCadastro,
+  .txtLogin {
+    border-radius: 12px 12px 0 0;
+  }
+}
+
+@media (min-width: 901px) {
+  .Container,
+  .ContainerL {
+    align-items: stretch;
+  }
+}
+
+/* ============================================
+   CAMPOS DE SENHA COM ÍCONE DE VISIBILIDADE
+   ============================================ */
+
+.inputLoginContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inputLogin {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0px 0px 8px 8px;
+  padding: 12px;
+  padding-right: 45px;
+  box-sizing: border-box;
+  outline: none;
+  width: 100%;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.togglePassword:hover {
+  color: #00c50a;
+}
+
+.btnLogin {
+  width: 250px;
+  padding: 12px;
+  background-color: #00c50a;
+  color: white;
+  border: 2px solid #00c50a;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center;
+}
+
+.btnLogin:hover {
+  background-color: #01b90a;
+}
+
+.btnLogin:active {
+  background-color: #008106;
+  transform: scale(0.98);
+}
+
+/* ============================================
+   TELA DE MENU
+   ============================================ */
+
+.ContainerM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menuF {
+  width: 900px;
+  height: 550px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.Topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.Nome {
+  font-size: 40px;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(167,0,0,0.5);
+}
+
+.topoBtns {
+  display: flex;
+  gap: 15px;
+}
+
+.perfilBtn,
+.matchBtn,
+.sairBtn,
+.inicioBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 12px 20px;
+  gap: 0.5rem;
+  background: #111;
+  color: #fff;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+}
+
+.perfilBtn:hover,
+.inicioBtn:hover,
+.sairBtn:hover {
+  background: #222;
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.matchBtn:hover,
+.inicioBtn:hover {
+  background: #00c50a;
+  color: #fff;
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.sairBtn:hover {
+  background: #ff0000;
+}
+
+.Conteudo {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+}
+
+.ladoEsquerdo {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Jogo {
+  flex: 1;
+  background: #1c1c1c;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.Jogo:hover {
+  background: #292929;
+  transform: scale(1.03);
+}
+
+.perfilU {
+  flex: 1;
+  background: #141414;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+}
+
+.Acoes {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.Acoes button {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.Nao {
+  background: #2a2a2a;
+  color: #ff4d4d;
+}
+
+.Nao:hover {
+  background: #ff4d4d;
+  color: white;
+  transform: scale(1.1);
+}
+
+.Sim {
+  background: #2a2a2a;
+  color: #00ff88;
+}
+
+.Sim:hover {
+  background: #00ff88;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* ============================================
+   TELA DE MATCH
+   ============================================ */
+
+.ContainerMt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menuMt {
+  width: 900px;
+  height: 550px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.TopoMt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.NomeMt {
+  font-size: 40px;
+  margin-top: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(167,0,0,0.5);
+}
+
+.topoBtnsMt {
+  display: flex;
+  gap: 15px;
+}
+
+.perfilBtn,
+.matchBtn,
+.inicioBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 12px 18px;
+  gap: 0.5rem;
+  background: #1c1c1c;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.perfilBtn:hover,
+.inicioBtn:hover,
+.matchBtn:hover {
+  background: #00c50a;
+  color: #fff;
+}
+
+.ConteudoMt {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+}
+
+.ladoEsquerdoMt {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoPerfil h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.infoPerfil p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.AcoesMT {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.AcoesMT button {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.NaoMt {
+  background: #2a2a2a;
+  color: #ff4d4d;
+}
+
+.NaoMt:hover {
+  background: #ff4d4d;
+  color: white;
+  transform: scale(1.1);
+}
+
+.SimMt {
+  background: #2a2a2a;
+  color: #00ff88;
+}
+
+.SimMt:hover {
+  background: #00ff88;
+  color: black;
+  transform: scale(1.1);
+}
+
+.SetasMt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Mensagens de status (sucesso / erro) */
+.successMessage,
+.errorMessage {
+  max-width: 650px;
+  margin: 12px auto;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6), inset 0 -2px 6px rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,0,0,0.4);
+  animation: messageIn 320ms ease-out;
+}
+
+.successMessage {
+  background: linear-gradient(180deg, rgba(0,197,10,0.95), rgba(0,150,8,0.95));
+  border-color: rgba(0,120,6,0.9);
+  box-shadow: 0 8px 30px rgba(0,197,10,0.12), 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.errorMessage {
+  background: linear-gradient(180deg, rgba(167,0,0,0.95), rgba(209,0,0,0.95));
+  border-color: rgba(120,0,0,0.9);
+  box-shadow: 0 8px 30px rgba(209,0,0,0.12), 0 2px 8px rgba(0,0,0,0.6);
+}
+
+@keyframes messageIn {
+  from { transform: translateY(-6px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Indicar campos inválidos */
+.inputError {
+  box-shadow: 0 0 0 3px rgba(255,0,0,0.12) inset, 0 0 0 2px rgba(255,0,0,0.06);
+  border-radius: 6px;
+  outline: none;
+}
+
+/* Ajuste fino para telas pequenas */
+@media (max-width: 600px) {
+  .successMessage,
+  .errorMessage {
+    margin: 10px 16px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
+
+/* Painel auxiliar para mensagens sem formulário (token inválido) */
+.messagePanel {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 0px 0px 15px 15px;
+  width: 100%;
+  max-width: 650px;
+  box-sizing: border-box;
+  margin: 0 auto 12px auto;
+  border-left: 1px solid #00c50a;
+  border-right: 1px solid #00c50a;
+  border-bottom: 1px solid #00c50a;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), 0 0 10px rgba(0,197,10,0.08);
+}
+
+/* Quando as mensagens estiverem dentro do form, alinhar com o painel */
+.Login form .successMessage,
+.Login form .errorMessage {
+  margin: 0 0 12px 0;
+  width: 100%;
+  max-width: none;
+  border-radius: 8px;
+}
+
+.SetasMt button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: #1c1c1c;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 24px;
+}
+
+.SetasMt button:hover {
+  background: #333;
+  transform: scale(1.1);
+}
+
+/* ============================================
+   TELA DE PERFIL
+   ============================================ */
+
+.ContainerPerfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.menuPerfil {
+  width: 900px;
+  height: 550px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.TopoPerfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.NomePerfilTitulo {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(167,0,0,0.5);
+}
+
+.topoBtnsPerfil {
+  display: flex;
+  gap: 15px;
+}
+
+.inicioBtn,
+.matchBtn,
+.perfilBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 12px 18px;
+  gap: 0.5rem;
+  background: #1c1c1c;
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.inicioBtn:hover,
+.perfilBtn:hover,
+.matchBtn:hover {
+  background: #00c50a;
+  color: #fff;
+}
+
+.ConteudoPerfil {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ladoEsquerdoPerfil {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.JogoPerfil {
+  flex: 1;
+  background: #1c1c1c;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.JogoPerfil:hover {
+  background: #292929;
+  transform: scale(1.03);
+  border-color: #ff0000;
+}
+
+.placeholderTexto {
+  color: #666;
+  font-weight: bold;
+}
+
+.detalhesUsuario {
+  flex: 1;
+  background: #141414;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fotoUsuarioBox {
+  display: flex;
+  align-items: flex-start;
+}
+
+.fotoAvatar {
+  width: 150px;
+  height: 150px;
+  background: #2a2a2a;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  border: 3px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.infoUsuarioBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.infoUsuarioBox::-webkit-scrollbar {
+  width: 4px;
+}
+
+.infoUsuarioBox::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.infoUsuarioBox::-webkit-scrollbar-thumb {
+  background: rgba(167,0,0,0.5);
+  border-radius: 4px;
+}
+
+.authNome {
+  margin: 0;
+  font-size: 32px;
+  border: none;
+  padding: 0;
+}
+
+.authNasc,
+.authContato {
+  margin: 0;
+  font-size: 16px;
+  color: #ccc;
+}
+
+.authNasc strong,
+.authContato strong {
+  color: white;
+}
+
+.authDescricao {
+  margin-top: 10px;
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
+}
+
+.authDescricao strong {
+  font-size: 18px;
+  color: #ff0000;
+}
+
+.authDescricao p {
+  margin-top: 5px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* ============================================
+   EDIÇÃO DE PERFIL
+   ============================================ */
+
+.fotoLabel {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.fotoEditIcon {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  background: #1c1c1c;
+  border: 2px solid #ff0000;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+.fotoLabel:hover .fotoEditIcon {
+  background: #ff0000;
+  transform: scale(1.1);
+}
+
+.cabecalhoInfoPerfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.btnEditarPerfil {
+  background: #1c1c1c;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btnEditarPerfil:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.inputEdit,
+.textareaEdit {
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+}
+
+.inputEdit:focus,
+.textareaEdit:focus {
+  outline: none;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.textareaEdit {
+  resize: none;
+}
+
+.btnSalvarPerfil {
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btnSalvarPerfil:hover {
+  background: #b30000;
+}
+
+/* ============================================
+   FORMULÁRIO DE EDIÇÃO (NOVO DESIGN)
+   ============================================ */
+
+@keyframes slideInEdit {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.editFormCard {
+  background: linear-gradient(135deg, rgba(20,20,20,0.95) 0%, rgba(30,10,10,0.9) 100%);
+  border: 1px solid rgba(167,0,0,0.3);
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 14px;
+  animation: slideInEdit 0.25s ease-out;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.editFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.editFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.editLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: #a70000;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.editSelect,
+.editInput,
+.editTextarea {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.editSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' width%3D'10' height%3D'10'%3E%3Cpath fill%3D'%23aaa' d%3D'M0 0l5 6 5-6z'/%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px;
+  padding-right: 28px;
+  cursor: pointer;
+}
+
+.editSelect option {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.editSelect:focus,
+.editInput:focus,
+.editTextarea:focus {
+  border-color: #a70000;
+  box-shadow: 0 0 0 3px rgba(167,0,0,0.2);
+}
+
+.editTextarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.editContatoRow {
+  display: flex;
+  gap: 8px;
+}
+
+.editSelectSmall {
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 13px;
+  font-family: inherit;
+  min-width: 80px;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editSelectSmall:focus {
+  border-color: #a70000;
+  box-shadow: 0 0 0 3px rgba(167,0,0,0.2);
+}
+
+.editInputFlex {
+  flex: 1;
+  width: auto;
+}
+
+.editFormActions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btnSalvarEdit {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #a70000, #d10000);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+  box-shadow: 0 4px 15px rgba(167,0,0,0.4);
+}
+
+.btnSalvarEdit:hover {
+  background: linear-gradient(135deg, #c40000, #ff1a1a);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(167,0,0,0.6);
+}
+
+.btnSalvarEdit:active {
+  transform: translateY(0);
+}
+
+.btnExcluirEdit {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #ff4444;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid rgba(255,68,68,0.35);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btnExcluirEdit:hover {
+  background: rgba(255,68,68,0.1);
+  border-color: rgba(255,68,68,0.7);
+}
+
+/* ============================================
+   TELA DE SUCESSO - CADASTRO
+   ============================================ */
+
+.ContainerSucesso {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../fotos/fundo.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.SucessoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  animation: sucessoEntrada 0.6s ease-out;
+}
+
+@keyframes sucessoEntrada {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Controle de videogame estilizado */
+.ControllerSuccess {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at 30% 30%, #1a3a1a, #0d1f0d);
+  border: 3px solid #00c50a;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 
+    0 0 30px rgba(0, 197, 10, 0.5),
+    0 0 60px rgba(0, 197, 10, 0.3),
+    inset 0 0 30px rgba(0, 197, 10, 0.2);
+  animation: controllerPulse 1s ease-in-out infinite;
+}
+
+@keyframes controllerPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(0, 197, 10, 0.5),
+      0 0 60px rgba(0, 197, 10, 0.3),
+      inset 0 0 30px rgba(0, 197, 10, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 
+      0 0 50px rgba(0, 197, 10, 0.8),
+      0 0 100px rgba(0, 197, 10, 0.6),
+      inset 0 0 40px rgba(0, 197, 10, 0.4);
+    transform: scale(1.05);
+  }
+}
+
+/* Botões do controle */
+.ControllerButton {
+  width: 40px;
+  height: 40px;
+  background: #00c50a;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 20px rgba(0, 197, 10, 0.8),
+    inset 0 0 10px rgba(102, 255, 126, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.5);
+  animation: botaoLed 0.6s ease-in-out infinite;
+  cursor: pointer;
+}
+
+.ControllerButton:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ControllerButton:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.ControllerButton:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.ControllerButton:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+@keyframes botaoLed {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 0 20px rgba(0, 197, 10, 0.8),
+      inset 0 0 10px rgba(102, 255, 126, 0.5),
+      0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 
+      0 0 40px rgba(0, 197, 10, 1),
+      inset 0 0 15px rgba(102, 255, 126, 0.8),
+      0 8px 20px rgba(0, 197, 10, 0.6);
+  }
+}
+
+/* Mensagem de sucesso */
+.MensagemSucesso {
+  color: #00c50a;
+  font-size: 48px;
+  margin: 0;
+  text-align: center;
+  text-shadow: 
+    0 0 10px rgba(0, 197, 10, 0.5),
+    0 0 20px rgba(0, 197, 10, 0.3);
+  animation: mensagemFlutua 0.8s ease-out 0.3s both;
+  font-weight: bold;
+}
+
+@keyframes mensagemFlutua {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.SubtitloSucesso {
+  color: #66ff7e;
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+  opacity: 0.9;
+  animation: mensagemFlutua 0.8s ease-out 0.5s both;
+}
+
+/* Loading dots */
+.LoadingSucesso {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.Dot {
+  width: 12px;
+  height: 12px;
+  background: #00c50a;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 197, 10, 0.8);
+  animation: dotsPulse 1.4s ease-in-out infinite;
+}
+
+.Dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.Dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.Dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotsPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Quadrado girando */
+.SquareLoading {
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border-radius: 14px;
+  position: relative;
+  border: 6px solid transparent;
+  border-image-source: conic-gradient(
+    from 0deg,
+    #a70000 0%,
+    #ff4444 25%,
+    #a70000 50%,
+    #ff4444 75%,
+    #a70000 100%
+  );
+  border-image-slice: 1;
+  animation: squareRotate 3.5s linear infinite, spinBorder 2.5s linear infinite;
+  box-shadow:
+    0 0 30px rgba(167, 0, 0, 0.5),
+    0 0 60px rgba(167, 0, 0, 0.2);
+}
+
+.SquareLoading::before,
+.SquareLoading::after {
+  display: none;
+}
+
+@keyframes spinBorder {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes squareRotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   NOTIFICAÇÕES PADRONIZADAS
+   ============================================ */
+
+.errorMessage {
+  color: #ffcccc;
+  background: #660000;
+  border: 1px solid #ff0000;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  animation: slideDown 0.3s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.errorMessage.show {
+  display: block;
+}
+
+.successMessage {
+  color: #ccffcc;
+  background: #006600;
+  border: 1px solid #00c50a;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  animation: slideDown 0.3s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.successMessage.show {
+  display: block;
+}
+
+.warningMessage {
+  color: #fff3cd;
+  background: #664400;
+  border: 1px solid #ffb300;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  animation: slideDown 0.3s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.warningMessage.show {
+  display: block;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
