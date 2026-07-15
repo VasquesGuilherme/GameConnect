@@ -3,7 +3,7 @@ $host = 'localhost';
 $port = '3308';
 $dbname = 'gameconnect';
 $user = 'root';
-$pass = 'etec123';
+$pass = '';
 
 function createDatabaseConnection(): PDO
 {
